@@ -9,6 +9,17 @@ export default {
   data() {
     return {};
   },
+  mounted() {
+    // console.log(this.$el.children);
+    for (const node of this.$el.children) {
+      let name = node.nodeName.toLowerCase();
+      if (name !== "button") {
+        console.warn(
+          `g-button-group 的子元素应该全是 g-button,但是你写的是 ${name},可能影响交互样式`
+        );
+      }
+    }
+  },
   components: {},
 };
 </script>
@@ -19,7 +30,9 @@ export default {
   vertical-align: middle;
   > .v-button {
     border-radius: 0;
-    margin-left: -1px;
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
     &:first-child {
       border-top-left-radius: var(--border-radius);
       border-bottom-left-radius: var(--border-radius);
