@@ -1,11 +1,12 @@
 // 单文件组件
 <template>
   <button class="v-button" :class="{[`icon-${iconPosition}`]:true}">
-    <svg v-if="icon" class="icon">
+    <!-- <svg v-if="icon" class="icon">
       <use :xlink:href="`#i-${icon}`" />
-    </svg>
+    </svg>-->
+    <v-icon class="icon" v-if="icon" :name="icon" />
     <div class="content">
-      <slot></slot>
+      <slot />
     </div>
   </button>
 </template>
