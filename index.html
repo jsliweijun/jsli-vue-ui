@@ -10,7 +10,7 @@
         padding: 0;
         box-sizing: border-box;
       }
-      /* 变量声明 */
+      /* 变量声明  :root 可以是 html 根元素，ie10开始支持 */
       :root {
         --button-height: 32px;
         --font-size: 14px;
@@ -28,29 +28,24 @@
         font-size: var(--font-size);
       }
     </style>
-    <!-- <style>
-      .v-button {
-        font-size: var(--font-size);
-        height: var(--button-height);
-        padding: 0 1em;
-        border-radius: var(--border-radius);
-        border: 1px solid var(--border-color);
-        background: var(--button-bg);
+    <style>
+      .icon {
+        width: 1em;
+        height: 1em;
       }
-      .v-button:hover {
-        border-color: var(--horder-color-hover);
-      }
-      .v-button:active {
-        background-color: var(--button-active-bg);
-      }
-      .v-button:focus {
-        outline: none;
-      }
-    </style> -->
+    </style>
   </head>
   <body>
     <div id="app">
-      <v-button></v-button>
+      <v-button icon="setting">
+        按钮
+      </v-button>
+      <v-button icon="setting" icon-position="left">
+        按钮
+      </v-button>
+      <v-button icon="setting" icon-position="right">
+        按钮
+      </v-button>
     </div>
     <!-- <script src="./node_modules/vue/dist/vue.min.js"></script>
     <script src="./button.js"></script>
@@ -60,5 +55,6 @@
       })
     </script> -->
     <script src="./src/app.js"></script>
+    <script src="//at.alicdn.com/t/font_2021584_k2bwp8400u.js"></script>
   </body>
 </html>
