@@ -8,3 +8,4 @@ https://github.com/zhuanzhuyihao/vue-ui.git
 ./node_modules/.bin/parcel index.html  --no-cache
 npx parcel index.html
 ```
+vue-ui 发布到 npm
