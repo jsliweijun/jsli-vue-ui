@@ -1,12 +1,14 @@
 // 单文件组件
 <template>
-  <button class="v-button" :class="{[`icon-${iconPosition}`]:true}">
+  <button class="v-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
     <!-- <svg v-if="icon" class="icon">
       <use :xlink:href="`#i-${icon}`" />
     </svg>-->
-    <v-icon class="icon" v-if="icon" :name="icon" />
+
+    <v-icon class="loading" v-if="loading" name="loading"></v-icon>
+    <v-icon class="icon" v-if="icon && !loading" :name="icon"></v-icon>
     <div class="content">
-      <slot />
+      <slot></slot>
     </div>
   </button>
 </template>
@@ -15,6 +17,10 @@
 export default {
   props: {
     icon: {},
+    loading: {
+      type: Boolean,
+      default: false,
+    },
     iconPosition: {
       type: String,
       default: "left",
@@ -36,6 +42,15 @@ export default {
 </script>
 
 <style lang="scss"  scoped>
+// 定义动画
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .v-button {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -73,6 +88,10 @@ export default {
       margin-left: 0.3em;
       margin-right: 0;
     }
+  }
+  // 使用动画
+  .loading {
+    animation: spin 1s infinite linear;
   }
 }
 </style>
