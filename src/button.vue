@@ -1,39 +1,9 @@
-// 单文件组件
 <template>
-  <button class="v-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
-    <!-- <svg v-if="icon" class="icon">
-      <use :xlink:href="`#i-${icon}`" />
-    </svg>-->
-
-    <v-icon class="loading" v-if="loading" name="loading"></v-icon>
-    <v-icon class="icon" v-if="icon && !loading" :name="icon"></v-icon>
-    <div class="content">
-      <slot></slot>
-    </div>
-  </button>
+  <button class="g-button">按钮</button>
 </template>
 
 <script>
 export default {
-  props: {
-    icon: {},
-    loading: {
-      type: Boolean,
-      default: false,
-    },
-    iconPosition: {
-      type: String,
-      default: "left",
-      validator(value) {
-        // if (value !== "left" && value !== "right") {
-        //   return false;
-        // } else {
-        //   return true;
-        // }  这个代码可以再简化
-        return value === "left" || value === "right";
-      },
-    },
-  },
   data() {
     return {};
   },
@@ -41,17 +11,8 @@ export default {
 };
 </script>
 
-<style lang="scss"  scoped>
-// 定义动画
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.v-button {
+<style lang="scss" scoped>
+.g-button {
   font-size: var(--font-size);
   height: var(--button-height);
   padding: 0 1em;
@@ -71,27 +32,6 @@ export default {
   }
   &:focus {
     outline: none;
-  }
-  > .content {
-    order: 2;
-  }
-  > .icon {
-    order: 1;
-    margin-right: 0.3em;
-  }
-  &.icon-right {
-    > .content {
-      order: 1;
-    }
-    > .icon {
-      order: 2;
-      margin-left: 0.3em;
-      margin-right: 0;
-    }
-  }
-  // 使用动画
-  .loading {
-    animation: spin 1s infinite linear;
   }
 }
 </style>
