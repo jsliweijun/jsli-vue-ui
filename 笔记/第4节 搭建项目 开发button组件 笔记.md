@@ -46,8 +46,10 @@ npx parcel index.html  // 在当前目录下找 parcel 运行
 * 开发 g-button-group ,解决按钮之间边框问题，2条边框合并成1条，使用margin-left：-1，再hover状态设置z-index。
   * 解决 g-button-group 使用时，如果没按要求书写里面的元素标签，会出现样式问题，使用组件的声明周期钩子 mounted(){} 进行检查它的子元素 this.$el.children ,给警告。
 
-* 单元测试
+* 单元测试 <https://cn.vuejs.org/v2/guide/testing.html>
   * 使用 chai 库， 使用方式：应该，期望，断言 . `npm i -D chai`
   * BDD 行为驱动开发
   * TDD 测试驱动开发
   * Assert 断言， 主观认为，如果对了，就不报错。如果错了，就断言失败。
+* 单元测试，看输入参数就好了。一个参数写一个测试用例，事件要测。
+* 测试事件，使用 chai-spies

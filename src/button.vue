@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import Icon from "./icon";
 export default {
   // props: ["icon", "iconPosition"],
   props: {
@@ -41,7 +42,9 @@ export default {
       this.$emit("click");
     },
   },
-  components: {},
+  components: {
+    "g-icon": Icon,
+  },
 };
 </script>
 
