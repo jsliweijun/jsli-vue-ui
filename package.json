@@ -1,8 +1,8 @@
 {
   "name": "learn-vue-ui",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.3",
+  "description": "vue.js ui 组件库",
+  "main": "dist/index.js",
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"

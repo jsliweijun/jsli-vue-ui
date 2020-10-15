@@ -1,9 +1,23 @@
-# vue.js的 ui 框架
+# learn-vue-ui:一个 Vue UI 组件库
 
-安装
+[![Build Status](https://travis-ci.org/jsliweijun/learn-vue-ui.svg?branch=master)](https://travis-ci.org/jsliweijun/learn-vue-ui)
 
-CSS 需要开启
+## 介绍
+
+## 开始使用
+
+1. 安装
+
+使用该组件库时，请在 CSS 中开启 border-box
 
 ```css
-  box-sizing: border-box
+  * {box-sizing: border-box}
 ```
+
+## 文档
+
+## 提问
+
+## 变更记录
+
+## 联系方式
