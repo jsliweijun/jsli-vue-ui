@@ -1,6 +1,8 @@
-# learn-vue-ui:一个 Vue UI 组件库
+# learn-vue-ui
 
 [![Build Status](https://travis-ci.org/jsliweijun/learn-vue-ui.svg?branch=master)](https://travis-ci.org/jsliweijun/learn-vue-ui)
+
+一个 Vue UI 组件库
 
 ## 介绍
 

@@ -1,7 +1,7 @@
 <template>
   <button
     @click="$emit('click')"
-    class="g-button test123"
+    class="g-button"
     :class="{ [`icon-${iconPosition}`]: true }"
   >
     <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
@@ -49,6 +49,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../style/var.scss";
 // 声明动画
 @keyframes spin {
   0% {
@@ -59,12 +60,12 @@ export default {
   }
 }
 .g-button {
-  font-size: var(--font-size);
-  height: var(--button-height);
+  font-size: $font-size;
+  height: $button-height;
   padding: 0 1em;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--border-color);
-  background: var(--button-bg);
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+  background: $button-bg;
   // 给按钮加 flex布局，可以让icon和内容进行排序
   display: inline-flex;
   justify-content: center;
@@ -72,10 +73,10 @@ export default {
   // inline 影响同一行元素上下不对齐
   vertical-align: middle;
   &:hover {
-    border-color: var(--horder-color-hover);
+    border-color: $border-color-hover;
   }
   &:active {
-    background-color: var(--button-active-bg);
+    background-color: $button-active-bg;
   }
   &:focus {
     outline: none;
