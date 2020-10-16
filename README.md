@@ -6,13 +6,19 @@
 
 ## 开始使用
 
-1. 安装
+1. 添加样式
 
-使用该组件库时，请在 CSS 中开启 border-box
+  使用该组件库时，请在 CSS 中开启 border-box
 
-```css
-  * {box-sizing: border-box}
-```
+  ```css
+    * {box-sizing: border-box}
+  ```
+
+2. 安装
+
+  ```js
+    npm i learn-vue-ui
+  ```
 
 ## 文档
 
