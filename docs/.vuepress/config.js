@@ -5,8 +5,8 @@ module.exports = {
     displayAllHeaders: true,
     nav: [
       { text: '主页', link: '/' },
-      { text: '文档', link: '/guide/' },
-      { text: 'Github', link: 'https://google.com' },
+      { text: '文档', link: '/install/get-started/' },
+      { text: 'Github', link: 'https://github.com/jsliweijun/learn-vue-ui' },
     ],
     sidebar: [
       {
