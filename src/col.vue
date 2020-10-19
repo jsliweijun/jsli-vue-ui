@@ -1,12 +1,6 @@
 <template>
-  <div
-    class="col"
-    :class="[span && `col-${span}`, offset && `offset-${offset}`]"
-    :style="{ paddingLeft: gutter / 2 + 'px', paddingRight: gutter / 2 + 'px' }"
-  >
-    <div style="border: 1px solid green; height: 100px">
-      <slot></slot>
-    </div>
+  <div class="col" :class="colClass" :style="colStryle">
+    <slot></slot>
   </div>
 </template>
 
@@ -27,7 +21,24 @@ export default {
   data() {
     return {
       gutter: 0,
+      // 将样式变量放在这，由于依赖gutter动态传参，会有bug
+      // colStryle: {
+      //   paddingLeft: this.gutter / 2 + "px",
+      //   paddingRight: this.gutter / 2 + "px",
+      // },
     };
+  },
+  computed: {
+    colClass() {
+      let { span, offset } = this;
+      return [span && `col-${span}`, offset && `offset-${offset}`];
+    },
+    colStryle() {
+      return {
+        paddingLeft: this.gutter / 2 + "px",
+        paddingRight: this.gutter / 2 + "px",
+      };
+    },
   },
   components: {},
 };
