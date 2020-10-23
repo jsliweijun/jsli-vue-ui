@@ -13,15 +13,19 @@
     </style>
     <style>
       .box {
-        width: 1024px;
-        margin: 0 auto;
+        /* width: 1024px; */
+        /* margin: 0 auto; */
+        margin: 0 20px;
         border: 1px solid red;
+      }
+      .demo-col {
+        border: 1px solid green;
       }
     </style>
   </head>
   <body>
     <div id="app">
-      <div class="box">
+      <!-- <div class="box">
         <g-row gutter="20">
           <g-col gutter="20">1</g-col>
           <g-col gutter="20">2</g-col>
@@ -50,6 +54,59 @@
         <g-row>
           <g-col span="2">2</g-col>
           <g-col span="19" offset="3">22</g-col>
+        </g-row>
+      </div> -->
+      <!-- <div class="box">
+        <h1>
+          手动测试，使用row，col 实现 模仿淘宝布局
+        </h1>
+        实现 1234 左靠， 1234567 右靠
+        <g-row class="topbar">
+          <g-col class="demo-col" span="9">
+            <g-row align="left">
+              如果要自己定义宽度也可以
+              <g-col style="width: 50px;">1</g-col>
+              <g-col>2</g-col>
+              <g-col>3</g-col>
+              <g-col>4</g-col>
+            </g-row>
+          </g-col>
+          <g-col class="demo-col" span="15">
+            <g-row align="right">
+              g-col*7{$}
+              <g-col>1</g-col>
+              <g-col>2</g-col>
+              <g-col>3</g-col>
+              <g-col>4</g-col>
+              <g-col>5</g-col>
+              <g-col>6</g-col>
+              <g-col>7</g-col>
+            </g-row>
+          </g-col>
+        </g-row>
+        <g-row class="logon-and-search-and-qrcode">
+          <g-col class="demo-col" span="4">
+            放淘宝图片，居中 http://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png 
+              嵌套使用 g-row g-col
+           
+            <g-row align="center">
+              <g-col>
+                <img
+                  width="50"
+                  src="http://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png"
+                />
+              </g-col>
+            </g-row>
+          </g-col>
+          <g-col class="demo-col" span="14"></g-col>
+          <g-col class="demo-col" span="6"></g-col>
+        </g-row>
+      </div> -->
+      <!-- 实现响应式 -->
+      <div class="box">
+        <g-row>
+          <g-col span="4" :phone="{span:12}">1</g-col>
+          <g-col span="20" :phone="{span:12}">2</g-col>
         </g-row>
       </div>
     </div>
