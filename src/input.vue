@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Icon from "./icon";
+import Icon from "./icon.vue";
 export default {
   name: "GInput",
   props: {

@@ -1,31 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>网格系统 grid 组件预览</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-    </style>
-    <style>
-      .box {
-        /* width: 1024px; */
-        /* margin: 0 auto; */
-        margin: 0 20px;
-        border: 1px solid red;
-      }
-      .demo-col {
-        border: 1px solid green;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="app">
-      <!-- <div class="box">
+<template>
+  <div id="grid">
+    <!-- <div class="box">
         <g-row gutter="20">
           <g-col gutter="20">1</g-col>
           <g-col gutter="20">2</g-col>
@@ -56,7 +31,7 @@
           <g-col span="19" offset="3">22</g-col>
         </g-row>
       </div> -->
-      <!-- <div class="box">
+    <!-- <div class="box">
         <h1>
           手动测试，使用row，col 实现 模仿淘宝布局
         </h1>
@@ -102,14 +77,23 @@
           <g-col class="demo-col" span="6"></g-col>
         </g-row>
       </div> -->
-      <!-- 实现响应式 -->
-      <div class="box">
-        <g-row>
-          <g-col span="4" :phone="{span:12}">1</g-col>
-          <g-col span="20" :phone="{span:12}">2</g-col>
-        </g-row>
-      </div>
+    <!-- 实现响应式 -->
+    <div class="box">
+      <g-row>
+        <g-col span="4" :phone="{ span: 12 }">1</g-col>
+        <g-col span="20" :phone="{ span: 12 }">2</g-col>
+      </g-row>
     </div>
-    <script src="../src/app.js"></script>
-  </body>
-</html>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {};
+  },
+  components: {},
+};
+</script>
+
+<style lang="stylus" scoped></style>
