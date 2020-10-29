@@ -6,17 +6,26 @@ export default {
     Vue.prototype.$toast = function(message, toastOption) {
       if (currentToast) {
         currentToast.close()
+        // 当手动关闭时，没将 currentToast设置为 null
       }
-      currentToast = createdToast({ Vue, message, propsData: toastOption })
+      currentToast = createdToast({
+        Vue,
+        message,
+        propsData: toastOption,
+        onClose: () => {
+          currentToast = null
+        },
+      })
     }
   },
 }
 
-function createdToast({ Vue, message, propsData }) {
+function createdToast({ Vue, message, propsData, onClose }) {
   let Constructor = Vue.extend(Toast)
   let toast = new Constructor(propsData)
   toast.$slots.default = [message]
   toast.$mount()
+  toast.$on('close', onClose)
   document.body.appendChild(toast.$el)
   return toast
 }
