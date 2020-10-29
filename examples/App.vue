@@ -6,6 +6,7 @@
         <li><router-link to="testIcon">Icon</router-link></li>
         <li><router-link to="testInput">Input</router-link></li>
         <li><router-link to="testGrid">Grid</router-link></li>
+        <li><router-link to="testToast">Toast</router-link></li>
       </ul>
     </div>
     <div class="content">

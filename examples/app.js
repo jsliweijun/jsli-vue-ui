@@ -8,6 +8,7 @@ import router from './route'
 // import Row from '../src/row.vue'
 // import Col from '../src/col.vue'
 import { Button, Icon, ButtonGroup, Input, Row, Col } from '../index'
+import ToastPlugin from '../src/plugin'
 
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
@@ -15,6 +16,8 @@ Vue.component('g-button-group', ButtonGroup)
 Vue.component('g-input', Input)
 Vue.component('g-row', Row)
 Vue.component('g-col', Col)
+//Vue.component('g-toast', Toast)
+Vue.use(ToastPlugin)
 
 new Vue({
   el: '#app',

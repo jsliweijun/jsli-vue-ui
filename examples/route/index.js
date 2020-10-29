@@ -4,6 +4,7 @@ import testIcon from '../view/testIcon.vue'
 import TestButton from '../view/testButton.vue'
 import TestGrid from '../view/testGrid.vue'
 import TestInput from '../view/testInput.vue'
+import TestToast from '../view/testToast.vue'
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,10 @@ export default new VueRouter({
     {
       path: '/testGrid',
       component: TestGrid,
+    },
+    {
+      path: '/TestToast',
+      component: TestToast,
     },
   ],
 })
