@@ -11,7 +11,17 @@ export default {
   },
   methods: {
     showToast() {
-      this.$toast("test toast");
+      this.$toast(
+        "很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字，完",
+        {
+          closeButton: {
+            text: "关闭",
+            callback() {
+              console.log("知道了");
+            },
+          },
+        }
+      );
     },
   },
   components: {},

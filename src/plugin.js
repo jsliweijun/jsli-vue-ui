@@ -2,7 +2,7 @@ import Toast from './toast.vue'
 
 export default {
   install(Vue, options) {
-    Vue.prototype.$toast = function(message) {
+    Vue.prototype.$toast = function(message, toastOption) {
       console.log(message)
       // 方式1
       // alert(message) 控制不了样式
@@ -12,7 +12,12 @@ export default {
 
       // 方式3 引入 toast，Vue.extend() 返回组件实例，可以调用
       let Constructor = Vue.extend(Toast)
-      let toast = new Constructor()
+      // 构造器传参
+      let toast = new Constructor({
+        propsData: {
+          closeButton: toastOption.closeButton,
+        },
+      })
       // 先将信息放入 插槽中
       toast.$slots.default = [message]
       // 挂载
