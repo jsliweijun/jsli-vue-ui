@@ -1,3 +1,4 @@
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = function(config) {
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -12,14 +13,35 @@ module.exports = function(config) {
     },
 
     // list of files / patterns to load in the browser
-    files: ['dist/**/*.test.js', 'dist/**/*.test.css'],
+    files: ['test/*.test.js'],
 
     // list of files / patterns to exclude
     exclude: [],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {},
+    preprocessors: { 'test/*.test.js': ['webpack'] },
+    webpack: {
+      mode: 'development',
+      module: {
+        rules: [
+          {
+            test: /\.vue$/,
+            loader: 'vue-loader',
+          },
+          {
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/,
+          },
+          {
+            test: /\.scss$/,
+            use: ['style-loader', 'css-loader', 'sass-loader'],
+          },
+        ],
+      },
+      plugins: [new VueLoaderPlugin()],
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
