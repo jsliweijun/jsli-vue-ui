@@ -14,9 +14,7 @@ export default {
       let Constructor = Vue.extend(Toast)
       // 构造器传参
       let toast = new Constructor({
-        propsData: {
-          closeButton: toastOption.closeButton,
-        },
+        propsData: toastOption,
       })
       // 先将信息放入 插槽中
       toast.$slots.default = [message]

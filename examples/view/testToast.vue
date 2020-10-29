@@ -14,6 +14,7 @@ export default {
       this.$toast(
         "很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字，完",
         {
+          position: "middle",
           closeButton: {
             text: "关闭",
             callback() {
