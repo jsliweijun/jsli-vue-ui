@@ -1,23 +1,24 @@
 <template>
-  <svg class="g-icon test">
-    <use :xlink:href="`#i-${name}`"></use>
-  </svg>
+    <i class="vue2-icon--set" :class="`vue2-icon-${name}`" @click="onClick"></i>
 </template>
 
 <script>
-import "./svg.js";
 export default {
-  props: ["name"],
-  data() {
-    return {};
-  },
-  components: {},
+    name: 'v-icon',
+    props: {
+        name: String,
+        click: {
+            type: Function
+        }
+    },
+    methods: {
+        onClick() {
+            this.$emit('click');
+        }
+    }
 };
 </script>
 
-<style lang="scss" scoped>
-.g-icon {
-  width: 1em;
-  height: 1em;
-}
+<style scoped lang="scss">
+@import '../../style/css/vue2-icons.scss';
 </style>
